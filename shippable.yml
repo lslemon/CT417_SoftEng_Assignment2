@@ -5,4 +5,7 @@ jdk:
  
 build: 
    ci:
+    #Create folders for test and code coverage
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
     - mvn install
