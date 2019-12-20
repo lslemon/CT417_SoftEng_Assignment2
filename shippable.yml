@@ -12,3 +12,4 @@ build:
     - mvn clean verify
     #- mvn clean cobertura:cobertura
     - mvn test
+    - cp -r target shippable/codecoverage
