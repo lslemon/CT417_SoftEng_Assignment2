@@ -31,14 +31,8 @@ public class Student
 	{
 		DateTime now = new DateTime();
 		DateTime dateOfBirth = new DateTime();
-		try {
-			dateOfBirth = format.pa(DOB);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			System.out.print("Date Format Error");
-			e.printStackTrace();
-		}
-		long diffMillis = Math.abs(now.getTime() - dateOfBirth.getTime());
+		dateOfBirth = format.parseDateTime(DOB);
+		long diffMillis = Math.abs(now.getMillis() - dateOfBirth.getMillis());
 		long diff = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);
 		int years = (int) (diff/365);
 		return years;
