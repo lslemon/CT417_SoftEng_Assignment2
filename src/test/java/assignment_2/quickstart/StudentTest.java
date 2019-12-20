@@ -21,7 +21,7 @@ public class StudentTest extends TestCase
 		Student student = new Student("Luke Slemon", "12/01/1998");
 		
 		String username = student.getUsername();
-		Assert.assertEquals(username, "Luke Slemon21");
+		Assert.assertEquals(username, "LukeSlemon21");
 	}
 }
 
