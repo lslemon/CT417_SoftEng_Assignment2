@@ -9,3 +9,5 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - mvn install
+    
+    - mvn clean cobertura:cobertura
