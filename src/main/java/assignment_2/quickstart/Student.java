@@ -40,8 +40,8 @@ public class Student
 	
 	public void setUsername()
 	{
-		username = name + getAge();
-		username = username.replace("\\s", "");
+		username = name.replaceAll("\\s", "") + getAge();
+		//username = username.replace("\\s", "");
 	}
 	
 	public String getUsername()
