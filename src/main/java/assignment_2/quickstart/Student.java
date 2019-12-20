@@ -2,7 +2,12 @@ package assignment_2.quickstart;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.joda.time.*;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+
+//import java.util.Date;
+//import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class Student
@@ -12,7 +17,8 @@ public class Student
 	private String username;
 	private int age;
 	private long ID;
-	private SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	//private SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	private DateTimeFormatter format = DateTimeFormat.forPattern("dd/MM/yyyy");
 	
 	public Student(String name, String DOB)
 	{
@@ -23,10 +29,10 @@ public class Student
 	
 	public int getAge()
 	{
-		Date now = new Date();
-		Date dateOfBirth = new Date();
+		DateTime now = new DateTime();
+		DateTime dateOfBirth = new DateTime();
 		try {
-			dateOfBirth = format.parse(DOB);
+			dateOfBirth = format.pa(DOB);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			System.out.print("Date Format Error");
